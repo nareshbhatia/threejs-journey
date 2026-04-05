@@ -1,7 +1,53 @@
 {
-    "cSpell.words": [
-        "metalness",
-        "threejs",
-        "updatables"
-    ]
+  "cSpell.words": [
+    "acro",
+    "asynciterable",
+    "autodocs",
+    "clsx",
+    "codegen",
+    "commitlint",
+    "connectrpc",
+    "copyfiles",
+    "datasources",
+    "deepmerge",
+    "earcut",
+    "fontsource",
+    "gomavlib",
+    "isbot",
+    "manypkg",
+    "mapbox",
+    "maptiler",
+    "mavlink",
+    "metalness",
+    "Naresh",
+    "nareshbhatia",
+    "nextjs",
+    "remrssi",
+    "rssi",
+    "SITL",
+    "statustext",
+    "tailwindcss",
+    "tanstack",
+    "testid",
+    "threejs",
+    "tsup",
+    "turborepo",
+    "typecheck",
+    "updatables",
+    "vite"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.prettier": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.indentSize": 2,
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "files.insertFinalNewline": true
 }
