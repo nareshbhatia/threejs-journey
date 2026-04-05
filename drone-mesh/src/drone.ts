@@ -1,6 +1,7 @@
-import * as THREE from "three";
+import * as THREE from 'three';
+import type { FrameUpdateFn } from './types.js';
 
-export function createDrone() {
+export function createDrone(): THREE.Group {
   const group = new THREE.Group();
 
   const bodyMat = new THREE.MeshStandardMaterial({
@@ -23,19 +24,31 @@ export function createDrone() {
   plate2.position.y = -15;
   group.add(plate2);
 
-  const rotor1 = new THREE.Mesh(new THREE.CylinderGeometry(75, 75, 20), rotorMat);
+  const rotor1 = new THREE.Mesh(
+    new THREE.CylinderGeometry(75, 75, 20),
+    rotorMat,
+  );
   rotor1.position.set(-275, 20, -275); // position.y = 20 = 10 + 10 (half of arm height + half of rotor height)
   group.add(rotor1);
 
-  const rotor2 = new THREE.Mesh(new THREE.CylinderGeometry(75, 75, 20), rotorMat);
+  const rotor2 = new THREE.Mesh(
+    new THREE.CylinderGeometry(75, 75, 20),
+    rotorMat,
+  );
   rotor2.position.set(275, 20, -275);
   group.add(rotor2);
 
-  const rotor3 = new THREE.Mesh(new THREE.CylinderGeometry(75, 75, 20), rotorMat);
+  const rotor3 = new THREE.Mesh(
+    new THREE.CylinderGeometry(75, 75, 20),
+    rotorMat,
+  );
   rotor3.position.set(-275, 20, 275);
   group.add(rotor3);
 
-  const rotor4 = new THREE.Mesh(new THREE.CylinderGeometry(75, 75, 20), rotorMat);
+  const rotor4 = new THREE.Mesh(
+    new THREE.CylinderGeometry(75, 75, 20),
+    rotorMat,
+  );
   rotor4.position.set(275, 20, 275);
   group.add(rotor4);
 
@@ -71,8 +84,8 @@ export function createDrone() {
 }
 
 /** Hover + slow yaw; pass to the animation loop's `updatables` list. */
-export function createDroneUpdater(drone) {
-  return (elapsed) => {
+export function createDroneUpdater(drone: THREE.Group): FrameUpdateFn {
+  return (elapsed: number) => {
     // Hover: gentle sinusoidal Y oscillation — frequency 1.5, amplitude 20
     drone.position.y = Math.sin(elapsed * 1.5) * 20;
     // Slow yaw rotation

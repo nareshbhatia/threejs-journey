@@ -1,9 +1,16 @@
-import * as THREE from "three";
+import * as THREE from 'three';
+import type { RunLoopOptions } from './types.js';
 
-export function runLoop({ scene, camera, renderer, controls, updatables }) {
+export function runLoop({
+  scene,
+  camera,
+  renderer,
+  controls,
+  updatables,
+}: RunLoopOptions): void {
   const timer = new THREE.Timer();
 
-  function animate() {
+  function animate(): void {
     requestAnimationFrame(animate);
 
     timer.update();

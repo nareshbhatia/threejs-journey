@@ -1,6 +1,6 @@
-import * as THREE from "three";
+import * as THREE from 'three';
 
-export function addLights(scene) {
+export function addLights(scene: THREE.Scene): void {
   // AmbientLight — illuminates all surfaces equally from all directions.
   // No shadows. Use as a base fill to prevent pure-black shadows.
   const ambient = new THREE.AmbientLight(0xffffff, 0.4); // color, intensity
@@ -12,7 +12,7 @@ export function addLights(scene) {
   scene.add(sun);
 
   // PointLight — radiates in all directions from a point, like a bulb.
-  const point = new THREE.PointLight("orange", 10, 0, 0); // color, intensity, distance, decay
+  const point = new THREE.PointLight('orange', 10, 0, 0); // color, intensity, distance, decay
   point.position.set(300, 300, 300);
   scene.add(point);
 }
