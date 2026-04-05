@@ -8,9 +8,10 @@ import * as THREE from 'three'
 // Creating a Scene: https://threejs.org/manual/#en/creating-a-scene
 
 /** ---------- Concepts ---------- */
-// To display anything with three.js, we need four things:
+// To display anything with three.js, we need the following things:
 //   1. A scene
 //   2. A camera
+//   3. One or more lights (ambient, directional, point) (only if using lit materials)
 //   3. One or more meshes
 //   4. A renderer
 
@@ -59,6 +60,11 @@ const geometry = new THREE.BoxGeometry(1, 1, 1)
 
 // Create a material
 // A material is a object that defines the appearance of an object.
+// MeshBasicMaterial just colors the surface of the object.
+// It ignores lights entirely and draws the mesh using the material’s color
+// (and textures if you use them) with no shading from scene lights.
+// If you want lights to affect how the surface looks, add a lit material like
+// MeshStandardMaterial or MeshLambertMaterial + Light objects to the scene.
 const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
 
 // Create a mesh
