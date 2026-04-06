@@ -6,7 +6,7 @@ export function runLoop({
   camera,
   renderer,
   controls,
-  updatables,
+  frameCallbacks: updatables,
 }: RunLoopOptions): void {
   const timer = new THREE.Timer();
 

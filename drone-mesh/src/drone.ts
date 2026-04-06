@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import type { FrameUpdateFn } from './types.js';
+import type { FrameCallback } from './types.js';
 
 export function createDrone(): THREE.Group {
   const group = new THREE.Group();
@@ -84,7 +84,7 @@ export function createDrone(): THREE.Group {
 }
 
 /** Hover + slow yaw; pass to the animation loop's `updatables` list. */
-export function createDroneUpdater(drone: THREE.Group): FrameUpdateFn {
+export function createDroneUpdater(drone: THREE.Group): FrameCallback {
   return (elapsed: number) => {
     // Hover: gentle sinusoidal Y oscillation — frequency 1.5, amplitude 20
     drone.position.y = Math.sin(elapsed * 1.5) * 20;

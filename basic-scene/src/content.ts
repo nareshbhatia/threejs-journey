@@ -43,10 +43,12 @@ export function createContent(): THREE.Group {
   sphere1.position.set(-100, 130, 50);
   group.add(sphere1);
 
+  // Zone mesh
   const zoneGeo = createZoneGeometry(zone1);
   const zoneMesh = new THREE.Mesh(zoneGeo, zoneMat);
   group.add(zoneMesh);
 
+  // Route line
   const routeGeo = createRouteGeometry(route1, {
     originLat: zone1.footprint[0].lat,
     originLng: zone1.footprint[0].lng,
