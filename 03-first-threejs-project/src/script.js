@@ -8,18 +8,20 @@ import * as THREE from "three";
 // Creating a Scene: https://threejs.org/manual/#en/creating-a-scene
 
 /** ---------- Concepts ---------- */
-// To display objects with three.js, we need the following things:
-//   1. A scene
-//   2. A camera
-//   3. One or more lights (ambient, directional, point) (only if using lit materials)
-//   4. One or more meshes (geometry + material)
-//   5. A renderer
-//   6. Controls to interact with the scene, e.g. orbit controls (optional)
-
-// Note that the scene and the camera are independent objects. The camera is not added
-// to the scene. The two objects are connected by the renderer. The renderer renders
-// the scene from the camera's perspective:
+// To display anything using three.js, we need three things:
+//   1. A scene – made up of one or more meshes (geometry + material)
+//   2. A camera – to look at the scene
+//   3. A renderer – to display the scene
+//
 //   renderer.render(scene, camera);
+//
+// Note that the scene and the camera are independent objects. Don't add the camera
+// to the scene. Basically, the renderer renders the scene using the camera from
+// its perspective.
+//
+// Additional things that are optional:
+//   1. One or more lights (ambient, directional, point) (only if using lit materials)
+//   2. Controls to interact with the scene, e.g. orbit controls (optional)
 
 /** ---------- Three.js Coordinate System ---------- */
 // x-axis points to the right (positive x is to the right)
